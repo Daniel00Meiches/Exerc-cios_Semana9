@@ -41,7 +41,7 @@ R) Os atributos definidos são o nome do animal, sua espécie e sua idade.
 
 **b) Como a classe AnimalSelvagem amplia a estrutura de Animal?** <br>
 
-R) A classe AnimalSelvagem amplia a estrutura da classe Animal adicionando um novo atributo que é o habitat natural do animal e um método que exibe o habitat.
+R) A subclasse AnimalSelvagem amplia a estrutura da classe Animal adicionando um novo atributo que é o habitat natural do animal e um método que exibe o habitat.
 
 ### 2. Herança <br>
 
@@ -55,9 +55,9 @@ R) Quando o comando super é usado, os atributos da classe Animal (nome, espéci
 
 ### 3. Instanciação <br>
 
-**e) O que ocorre passo a passo quando o comando new AnimalSelvagem("Nala",  "Leoa", 5, "Savana Africana") é executado?**
+**e) O que ocorre passo a passo quando o comando new AnimalSelvagem("Nala", "Leoa", 5, "Savana Africana") é executado?**
 
-R) O programa vai atribuir os parâmetros "Nala", "Leoa", 5 e "Savana Africana" aos seus respectivos atributos: Nome, Espécie, Idade e Habitat. Essencialmente:
+R) O objeto animal2 será criado e o programa vai atribuir os parâmetros "Nala", "Leoa", 5 e "Savana Africana" aos seus respectivos atributos: Nome, Espécie, Idade e Habitat. Essencialmente:
 
 ```
 this.nome = "Nala";
@@ -86,7 +86,7 @@ R) O método exibirHabitat() não está disponível em animal1, porque esse mét
 
 R) A herança da classe Animal permite que a subclasse AnimalSelvagem pode herdar os atributos da classe mãe sem ter que repetir código para a definição dos mesmos atributos na função constructor. A herança também permite que a subclasse Animal Selvagem pode chamar o método exibirInformacoes() sem ter que definir o mesmo método na subclasse.
 
-**j) Se fosse necessário adicionar um novo comportamento a todos os animais, como  "dormir()", em qual classe ele deveria ser implementado? Por quê?**
+**j) Se fosse necessário adicionar um novo comportamento a todos os animais, como "dormir()", em qual classe ele deveria ser implementado? Por quê?**
 
 R) Se o comportamento dormir() fosse um comportamento para todos os animais, deveria ser implementado na classe mãe Animal, já que esse comportamento poderia então ser herdado para outras subclasses de animais.
 
@@ -104,17 +104,52 @@ Habitat natural: Savana Africana
 
 **l) O que aconteceria se fosse removida a linha super(nome, especie, idade) do  construtor da classe AnimalSelvagem?** <br>
 
-R) 
+R) O código não poderia ser executado corretamente pois a subclasse AnimalSelvagem não teria mais acesso aos atributos nome, espécie, idade. Então, o definição do objeto animal 2 e o console.log do animal2 não teriam os parâmetros necessários para serem executados, o que resultaria em um erro.
 
 ### 7. Prática de Extensão <br>
-m) Crie uma nova subclasse chamada AnimalDomestico, que herda de Animal e inclui  um novo atributo chamado nomeDono. 
-n) Implemente um método chamado exibirDono() que retorne: "Dono de [nome do  animal]: [nome do dono]".
+
+**m) Crie uma nova subclasse chamada AnimalDomestico, que herda de Animal e inclui um novo atributo chamado nomeDono.** <br>
+
+R)
+
+```javascript
+class AnimalDomestico extends Animal {
+    constructor(nome, especie, idade, nomeDono) {
+       super(nome, especie, idade);
+       this.nomeDono = nomeDono;
+    }
+}
+```
+
+**n) Implemente um método chamado exibirDono() que retorne: "Dono de [nome do  animal]: [nome do dono]".** <br>
+
+```javascript
+class AnimalDomestico extends Animal {
+    constructor(nome, especie, idade, nomeDono) {
+       super(nome, especie, idade);
+       this.nomeDono = nomeDono;
+    }
+
+    exibirDono() {
+       return `Nome do dono: ${this.nomeDono}`;
+    }
+}
+```
 
 ### 8. Organização e Clareza de Código <br>
-o) Explique por que utilizar classes em vez de apenas funções soltas pode tornar o código  mais organizado e fácil de manter. 
+
+**o) Explique por que utilizar classes em vez de apenas funções soltas pode tornar o código mais organizado e fácil de manter.** <br>
+
+R) É mais fácil pois funções/métodos e atributos/variáveis podem ser mais facilmente acessados em diferentes subclasses que herdam
 
 ### 9. Criação de Métodos <br>
-p) Se fosse necessário criar um método chamado aniversario() para aumentar a idade de  qualquer animal em um ano, em qual classe ele deveria ser inserido? Justifique  tecnicamente sua escolha.
+
+**p) Se fosse necessário criar um método chamado aniversario() para aumentar a idade de qualquer animal em um ano, em qual classe ele deveria ser inserido? Justifique tecnicamente sua escolha.** <br>
+
+R) Se fosse necessário criar um método chamado aniversario() para qualquer animal, deveria ser inserido na classe Animal pois assim futuras subclasses que vão herdar métodos da classe Animal vão poder chamar o método aniversario(), desde que herdam também o atributo da idade usando um super().
 
 ### 10. Especialização com Herança <br>
-q) Qual é a principal motivação para se utilizar herança na criação de AnimalSelvagem em  vez de repetir os atributos e métodos da classe Animal? Quais seriam as consequências  caso não fosse utilizada herança nesse cenário?
+
+**q) Qual é a principal motivação para se utilizar herança na criação de AnimalSelvagem em vez de repetir os atributos e métodos da classe Animal? Quais seriam as consequências caso não fosse utilizada herança nesse cenário?** <br>
+
+R) 
