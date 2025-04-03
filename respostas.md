@@ -140,7 +140,7 @@ class AnimalDomestico extends Animal {
 
 **o) Explique por que utilizar classes em vez de apenas funções soltas pode tornar o código mais organizado e fácil de manter.** <br>
 
-R) É mais fácil pois funções/métodos e atributos/variáveis podem ser mais facilmente acessados em diferentes subclasses que herdam
+R) É mais fácil pois funções/métodos e atributos/variáveis podem ser mais facilmente acessados em diferentes subclasses que vão herdar esses atributos e métodos. O código fica mais organizado como resultado disso e tem menos repetição.
 
 ### 9. Criação de Métodos <br>
 
@@ -152,4 +152,4 @@ R) Se fosse necessário criar um método chamado aniversario() para qualquer ani
 
 **q) Qual é a principal motivação para se utilizar herança na criação de AnimalSelvagem em vez de repetir os atributos e métodos da classe Animal? Quais seriam as consequências caso não fosse utilizada herança nesse cenário?** <br>
 
-R) 
+R) A principal motivação para utilizar herança na subclasse AnimalSelvagem é justamente evitar a repetição de código, além da modularização do código também deixar o código mais organizado.
