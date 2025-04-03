@@ -74,25 +74,47 @@ R) A diferença da criação dos objetos animal1 e animal2 é que animal1 terá 
 
 **g) Por que o método exibirInformacoes() pode ser utilizado tanto em animal1 quanto em animal2?** <br>
 
-R) O método exibirInformacoes() pode ser usado nos dois objetos pois ambos os objetos têm os atributos necessários para que a função funcione corretamente
+R) O método exibirInformacoes() pode ser usado nos dois objetos pois ambos os objetos têm os atributos necessários, que são nome, espécie e idade, para que o método funcione corretamente.
 
 **h) O método exibirHabitat() está disponível em animal1? Justifique sua resposta.** <br>
 
+R) O método exibirHabitat() não está disponível em animal1, porque esse método é definido apenas na subclasse AnimalSelvagem e a classe mãe Animal não tem como herdar ou utilizar os métodos e atributos da subclasse AnimalSelvagem.
+
 ### 5. Reutilização de Código <br>
 
-i) Como a herança contribui para evitar duplicação de código nesse exemplo?
-j) Se fosse necessário adicionar um novo comportamento a todos os animais, como  "dormir()", em qual classe ele deveria ser implementado? Por quê?
+**i) Como a herança contribui para evitar duplicação de código nesse exemplo?** <br>
+
+R) A herança da classe Animal permite que a subclasse AnimalSelvagem pode herdar os atributos da classe mãe sem ter que repetir código para a definição dos mesmos atributos na função constructor. A herança também permite que a subclasse Animal Selvagem pode chamar o método exibirInformacoes() sem ter que definir o mesmo método na subclasse.
+
+**j) Se fosse necessário adicionar um novo comportamento a todos os animais, como  "dormir()", em qual classe ele deveria ser implementado? Por quê?**
+
+R) Se o comportamento dormir() fosse um comportamento para todos os animais, deveria ser implementado na classe mãe Animal, já que esse comportamento poderia então ser herdado para outras subclasses de animais.
 
 ### 6. Retorno e Impressão <br>
-k) Qual é a saída exata exibida no console ao executar o código apresentado?
-l) O que aconteceria se fosse removida a linha super(nome, especie, idade) do  construtor da classe AnimalSelvagem? 
 
-### 8. Prática de Extensão <br>
+**k) Qual é a saída exata exibida no console ao executar o código apresentado?** <br>
+
+R)
+
+```
+Nome: Tico, Espécie: Macaco, Idade: 4
+Nome: Nala, Espécie: Leoa, Idade: 5
+Habitat natural: Savana Africana
+```
+
+**l) O que aconteceria se fosse removida a linha super(nome, especie, idade) do  construtor da classe AnimalSelvagem?** <br>
+
+R) 
+
+### 7. Prática de Extensão <br>
 m) Crie uma nova subclasse chamada AnimalDomestico, que herda de Animal e inclui  um novo atributo chamado nomeDono. 
 n) Implemente um método chamado exibirDono() que retorne: "Dono de [nome do  animal]: [nome do dono]".
-9. Organização e Clareza de Código 
+
+### 8. Organização e Clareza de Código <br>
 o) Explique por que utilizar classes em vez de apenas funções soltas pode tornar o código  mais organizado e fácil de manter. 
-10. Criação de Métodos 
-p) Se fosse necessário criar um método chamado aniversario() para aumentar a idade de  qualquer animal em um ano, em qual classe ele deveria ser inserido? Justifique  tecnicamente sua escolha. 
-11. Especialização com Herança 
+
+### 9. Criação de Métodos <br>
+p) Se fosse necessário criar um método chamado aniversario() para aumentar a idade de  qualquer animal em um ano, em qual classe ele deveria ser inserido? Justifique  tecnicamente sua escolha.
+
+### 10. Especialização com Herança <br>
 q) Qual é a principal motivação para se utilizar herança na criação de AnimalSelvagem em  vez de repetir os atributos e métodos da classe Animal? Quais seriam as consequências  caso não fosse utilizada herança nesse cenário?
